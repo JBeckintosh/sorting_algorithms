@@ -1,9 +1,16 @@
 import React from 'react'
+import { Link, Outlet } from 'react-router-dom';
 
-function Home() {
+const Home = () => {
     return (
         <div>
-            Hey you've done the router thing :D
+            <h1>Home!</h1>
+
+            <nav>
+                <Link to="/merge-sort">Merge Sort</Link>
+            </nav>
+
+            <Outlet />
         </div>
     )
 }
