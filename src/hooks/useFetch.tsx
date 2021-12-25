@@ -1,21 +1,26 @@
-import { useState, useEffect } from 'react';
+import React, { useEffect } from "react";
+import ReactDOM from "react-dom";
 
-const useFetch = (url: string, query: string) => {
-    const [ data, setData ] = useState<any>();
-    
-    useEffect(() => {
-        if (url === null) return;
+const useFetch = (url: string, options: RequestInit) => {
+  const [response, setResponse] = React.useState(null);
+  const [error, setError] = React.useState(null);
 
-        const fetchData = async () => {
-            const response = await fetch(url + query);
-            const data = await response.json();
-            setData(data);
-        }
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(url, options);
+        const json = await res.json();
 
-        fetchData();    
-    }, [url]);
+        setResponse(json);
+      } catch (error: any) {
+        setError(error);
+      }
+    };
 
-    return { data };
-}
+    fetchData();
+  }, []);
+
+  return { response, error };
+};
 
 export default useFetch;
