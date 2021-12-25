@@ -1,20 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ResponsiveAppBar from './components/app-bar/ResponsiveAppBar';
+import RouteList from './routes/RoutesList';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './components/home/Home';
-import MergeSort from './components/merge-sort/MergeSort';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />}>
-          <Route path="merge-sort" element={<MergeSort />} />
-        </Route>
-        <Route path="*" element={<Home />} />
-      </Routes>
+      <ResponsiveAppBar />    
+      <RouteList />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

@@ -1,16 +1,9 @@
-import React from 'react'
-import { Link, Outlet } from 'react-router-dom';
+import React from 'react';
 
 const Home = () => {
     return (
         <div>
-            <h1>Home!</h1>
-
-            <nav>
-                <Link to="/merge-sort">Merge Sort</Link>
-            </nav>
-
-            <Outlet />
+            This is the home section
         </div>
     )
 }
