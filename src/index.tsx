@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import store from './redux/store';
+// import { Provider } from 'react-redux';
+// import store from './redux/store';
 import ResponsiveAppBar from './components/app-bar/ResponsiveAppBar';
 import RouteList from './routes/RoutesList';
 import { BrowserRouter } from 'react-router-dom';
@@ -10,12 +10,12 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    {/* <Provider store={store}> */}
       <BrowserRouter>
         <ResponsiveAppBar />    
         <RouteList />
       </BrowserRouter>
-    </Provider>
+    {/* </Provider> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
