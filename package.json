@@ -1,4 +1,5 @@
 {
+  "homepage": "https://jbeckintosh.github.io/sorting_algorithms/",
   "name": "sorting_algorithms",
   "version": "0.1.0",
   "private": true,
@@ -16,6 +17,7 @@
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.0",
     "@types/react-redux": "^7.1.21",
+    "gh-pages": "^3.2.3",
     "history": "^5.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -26,6 +28,8 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
+    "pre-deploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
